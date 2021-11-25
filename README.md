@@ -39,11 +39,15 @@ set AzureAd__TenantId="<YOUR_TENANT_ID>"
 set AzureAd__ClientId="<YOUR_CLIENT_ID>"
 set AzureAd__Domain="<YOUR_DOMAIN>"
 
+dotnet restore
+dotnet build
 dotnet run
 ```
 
 2. Execute by using command-line paramerers
 
 ```
+dotnet restore
+dotnet build
 dotnet run --AzureAd:TenantId="<YOUR_TENANT_ID>" --AzureAd:ClientId="<YOUR_CLIENT_ID>" --AzureAd:Domain="<YOUR_DOMAIN>"
 ```
