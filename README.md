@@ -10,6 +10,26 @@ When you execute it, you need only configure MSAL settings in the NET Core Web A
 Note: Other way is to change your "appsettings.json" file, and specify your MSAL settings in the "AzureAd" section.
 
 
+# Important Notes
+
+In order to authenticate against Azure AD, you need an Azure subscription and Azure Active Directory with your own users. In your Azure AD you have to register this Angular application as SPA app with redirectUri (e.g. http://localhost:5000). Additionally, you have to expose API and then configure API Permissions in your registered App.
+
+In this demo, the "Exposed API" is the following URI:  api://<YOUR_CLIENT_ID>/api-access
+
+The "api-access" is the name that you have to specify in your settings at "Expose API" menu. (If you specify different name, then you have to make changes in the example code in the "app.module.ts" file.)
+
+For further details, please read articles on the web.
+
+
+# Useful websites
+
+https://thecodeblogger.com/2020/05/05/angular-app-and-azure-ad-protected-web-api-using-msal/
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-angular-auth-code
+
+https://dev.to/theaswanson/adding-authentication-with-azure-ad-to-a-net-angular-web-app-with-msal-11a5
+
+
 # When you run this application you have to specify the "AzureAd" parameters with one of the following ways:
 
 1. Execute by using environment variables
