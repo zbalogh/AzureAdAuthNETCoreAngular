@@ -1,4 +1,4 @@
-<h2>This component demonstrates fetching data from the server.</h2>
+<h2>Weather Forecast Information</h2>
 <br>
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>
@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.date | date:'YYYY-MM-dd HH:mm' }}</td>
       <td>{{ forecast.temperatureC }}</td>
       <td>{{ forecast.temperatureF }}</td>
       <td>{{ forecast.summary }}</td>
