@@ -4,7 +4,8 @@
   <div class="toolbar-spacer"></div>
 
   <a mat-button [routerLink]="['home']">Home</a>
-  <a mat-button [routerLink]="['profile']">Profile</a>
+  <a mat-button [routerLink]="['weather']">Weather</a>
+  <a mat-button [routerLink]="['profile']" *ngIf="isUserLoggedIn()">Profile</a>
 
   <button mat-raised-button *ngIf="!isUserLoggedIn()" (click)="login()">Login</button>
   <button mat-raised-button *ngIf="isUserLoggedIn()" (click)="logout()">Logout</button>

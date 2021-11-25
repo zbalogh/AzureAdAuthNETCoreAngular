@@ -1,11 +1,18 @@
-<p>profile works!</p>
+<h2>Your Profile</h2>
+
+Hello {{name}} (<i>{{username}}</i>)
 
 <br>
-Weather Data:
 <br>
+<img *ngIf="photo" [src]="photo" class="img-avatar">
 
-<pre>
-{{ getDataAsString() }}
-</pre>
+<hr>
 
-<br>
+<div>
+  <p><strong>First Name: </strong> {{profile?.givenName}}</p>
+  <p><strong>Last Name: </strong> {{profile?.surname}}</p>
+  <p><strong>PrincipalName: </strong> {{profile?.userPrincipalName}}</p>
+  <p><strong>Mail: </strong> {{profile?.mail}}</p>
+  <p><strong>Mobile: </strong> {{profile?.mobilePhone}}</p>
+  <p><strong>Job Title: </strong> {{profile?.jobTitle}}</p>
+</div>

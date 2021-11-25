@@ -10,7 +10,7 @@ import { MyAuthenticationService } from './my-authentication.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'msal-angular-tutorial';
+  title = 'MSAL Angular Demo';
 
   constructor(private myAuthService: MyAuthenticationService)
   { }

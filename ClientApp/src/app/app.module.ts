@@ -17,6 +17,7 @@ import { MsalGuard, MsalGuardConfiguration, MsalInterceptor, MsalInterceptorConf
 import { InteractionType, IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 
 import { MSAL_CONFIGURATION_DATA } from '../main';
+import { WeatherComponent } from './weather/weather.component';
 
 
 
@@ -25,6 +26,8 @@ export const isIEBrowser = window.navigator.userAgent.indexOf('MSIE ') > -1 || w
 export const msalRedirectUri = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
 
 export const backendWebApiUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/api';
+
+export const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me';
 
 
 
@@ -70,7 +73,7 @@ function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration
   return {
     interactionType: InteractionType.Popup, // MSAL Interceptor Configuration
     protectedResourceMap: new Map([
-      ['https://graph.microsoft.com/v1.0/me', ['user.read']], // Enable 'user.read' API access for MS Graph API
+      [GRAPH_ENDPOINT, ['user.read']], // Enable 'user.read' API access for MS Graph API
       [backendWebApiUrl, ['api://' + MSAL_CONFIGURATION_DATA.clientId + '/api-access']] // enable Web API access for all resources in the "/api" path
     ])
   };
@@ -96,7 +99,8 @@ function MSALGuardConfigFactory(): MsalGuardConfiguration
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    WeatherComponent
   ],
   
   imports: [

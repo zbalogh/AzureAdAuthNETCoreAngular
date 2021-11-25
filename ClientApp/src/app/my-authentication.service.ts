@@ -96,8 +96,7 @@ export class MyAuthenticationService {
       const accounts : AccountInfo[] = this.authService.instance.getAllAccounts();
       // set flag if we have account info
       if (accounts && accounts.length > 0) {
-        this.isLoggedIn = this.authService.instance.getAllAccounts().length > 0;
-        // we are done, so return now
+        // we have account
         return true;
       }
     }

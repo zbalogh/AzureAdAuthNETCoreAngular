@@ -4,12 +4,18 @@ import { MsalGuard } from '@azure/msal-angular';
 
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { WeatherComponent } from './weather/weather.component';
 
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [MsalGuard]
+  },
+  {
+    path: 'weather',
+    component: WeatherComponent,
     canActivate: [MsalGuard]
   },
   {
