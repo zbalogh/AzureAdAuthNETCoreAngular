@@ -51,3 +51,12 @@ dotnet restore
 dotnet build
 dotnet run --AzureAd:TenantId="<YOUR_TENANT_ID>" --AzureAd:ClientId="<YOUR_CLIENT_ID>" --AzureAd:Domain="<YOUR_DOMAIN>"
 ```
+
+
+# Docker image on the docker hub
+
+```
+zbalogh/msal-webapi-angular
+```
+
+https://hub.docker.com/r/zbalogh/msal-webapi-angular
